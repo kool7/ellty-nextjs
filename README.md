@@ -4,4 +4,4 @@ This is a [Next.js](https://nextjs.org/) project for a test assessent. Here is t
 
 **Project Preview**
 
-![image](https://github.com/user-attachments/assets/43d1cd16-ee12-4f17-b6e3-b254075d4d58)
+![image](https://github.com/user-attachments/assets/a0cd8528-06d7-43ce-9651-c9ec8fdd19be)

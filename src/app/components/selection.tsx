@@ -15,26 +15,19 @@ export const Selection = () => {
 
   const handleCheckboxChange = (page: string) => {
     setSelectedPages((prev) => {
-      let newSelection;
-
       if (page === ALL_PAGES) {
         return prev.includes(ALL_PAGES) ? [] : [ALL_PAGES, ...pages];
       }
 
-      if (prev.includes(page)) {
-        newSelection = prev.filter((p) => p !== page && p !== ALL_PAGES);
-      } else {
-        newSelection = [...prev.filter((p) => p !== ALL_PAGES), page];
-      }
+      const isPageSelected = prev.includes(page);
+      const withoutAllPages = prev.filter((p) => p !== ALL_PAGES);
+      const withoutPage = withoutAllPages.filter((p) => p !== page);
 
-      if (newSelection.length > 0) {
-        newSelection = [
-          ALL_PAGES,
-          ...newSelection.filter((p) => p !== ALL_PAGES),
-        ];
-      }
+      const newSelection = isPageSelected
+        ? withoutPage
+        : [...withoutPage, page];
 
-      return newSelection;
+      return newSelection.length > 0 ? [ALL_PAGES, ...newSelection] : [];
     });
   };
 
